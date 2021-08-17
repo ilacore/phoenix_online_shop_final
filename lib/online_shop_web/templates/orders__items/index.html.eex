@@ -1,0 +1,30 @@
+<h1>Listing Orders items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Item</th>
+      <th>Amount</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for orders__items <- @orders_items do %>
+    <tr>
+      <td><%= orders__items.order_id %></td>
+      <td><%= orders__items.item_id %></td>
+      <td><%= orders__items.amount %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.orders__items_path(@conn, :show, orders__items) %></span>
+        <span><%= link "Edit", to: Routes.orders__items_path(@conn, :edit, orders__items) %></span>
+        <span><%= link "Delete", to: Routes.orders__items_path(@conn, :delete, orders__items), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Orders  items", to: Routes.orders__items_path(@conn, :new) %></span>

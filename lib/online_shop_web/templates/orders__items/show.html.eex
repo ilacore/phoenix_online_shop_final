@@ -1,0 +1,23 @@
+<h1>Show Orders  items</h1>
+
+<ul>
+
+  <li>
+    <strong>Order:</strong>
+    <%= @orders__items.order_id %>
+  </li>
+
+  <li>
+    <strong>Item:</strong>
+    <%= @orders__items.item_id %>
+  </li>
+
+  <li>
+    <strong>Amount:</strong>
+    <%= @orders__items.amount %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.orders__items_path(@conn, :edit, @orders__items) %></span>
+<span><%= link "Back", to: Routes.orders__items_path(@conn, :index) %></span>
